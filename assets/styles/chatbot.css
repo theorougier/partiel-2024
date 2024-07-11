@@ -25,12 +25,13 @@
     z-index: 1000;
 }
 .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
     background-color: #18a396;
     color: white;
-    padding: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    text-align: center;
+    border-radius: 10px 10px 0 0;
 }
 .chat-box {
     padding: 10px;
@@ -75,5 +76,67 @@
 }
 
 .message.bot .content-message a {
-    color: blue;
+    color: #A39618;
 }
+
+.typing {
+    position: relative;
+  }
+  
+  .typing span {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background: #3b5998;
+    border-radius: 50%;
+    animation: blink 1.5s infinite both;
+    position: relative;
+  }
+  
+  .typing span:nth-child(2) {
+    animation-delay: 0.2s;
+    margin-left: 5px;
+  }
+  
+  .typing span:nth-child(3) {
+    animation-delay: 0.4s;
+    margin-left: 5px;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 0.1;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.1;
+    }
+  }
+  
+  #typing-indicator .content-message {
+    display: inline-block;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    font-style: italic;
+  }
+
+  .language-select {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  
+  .flag {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .flag:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+  }
